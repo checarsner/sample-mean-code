@@ -1,0 +1,146 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>
+<html class="no-js">  <![endif]-->
+
+<!-- Angular app inserted here -->
+<html lang="en" ng-app="app">
+
+<head>
+  <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Site Title</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+
+	<!-- TODO: Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+	<!--  Use for Production - CDN 	-->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
+  <!--
+	<link rel="stylesheet" type="text/css" href="http://angular-ui.github.com/ng-grid/css/ng-grid.css"/>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+  -->
+
+  <!-- For Dev only -->
+	<link rel="stylesheet" href="dev_lib/bootstrap/dist/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/font-awesome.css"/>
+	<link rel="stylesheet" href="dev_lib/ng-grid/ng-grid.css"/>
+  <!-- Replace this with production ui-grid when export functions are released -->
+  <link rel="stylesheet" href="dev_lib/angular-ui-grid/ui-grid.css">
+
+	<!-- build:css({.tmp,app}) styles/main.css -->
+  <link rel="stylesheet" href="dev_lib/angular-motion/dist/angular-motion.css">
+	<link rel="stylesheet" href="css/site.css"/>
+	<!-- endbuild -->
+
+</head>
+<body ng-app="srWebApp">
+	<!--[if lt IE 7]>
+	<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser
+		today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better
+		experience this site.</p>
+	<![endif]-->
+
+	<!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.1.0/es5-shim.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/json3/3.2.5/json3.min.js"></script>
+	<![endif]-->
+
+	<div id="sr-header2" class="container">
+		<div id="sr-title2">
+			<img src="img/logo.png" class="sr-logo">
+		</div>
+	</div>
+
+	<!-- Angular partials get rendered in the ng-view directive -->
+	<div class="container" ng-view=""></div>
+
+	<div id="FooterContainerDiv" class="container">
+		<div id="FooterContentDiv" class="sr-FooterContent">
+		<br>
+		All trademarks and registered trademarks appearing on
+		this site are the property of their respective owners.</div>
+	</div>
+
+	<!-- Note: moment.js is used for date handling. (See momentjs.com) -->
+	<script src="dev_lib/momentjs/moment.js"></script>
+	<script src="dev_lib/jquery/jquery.js"></script>
+	<script src="dev_lib/jquery-ui/ui/jquery-ui.js"></script>
+	<script src="dev_lib/angular/angular.js"></script>
+  <script src="dev_lib/angular-animate/angular-animate.js"></script>
+	<script src="dev_lib/angular-resource/angular-resource.js"></script>
+	<script src="dev_lib/angular-route/angular-route.js"></script>
+	<script src="dev_lib/angular-cookies/angular-cookies.js"></script>
+  <script src="dev_lib/angular-sanitize/angular-sanitize.js"></script>
+  <script src="dev_lib/angular-bootstrap/ui-bootstrap.min.js"></script>
+  <script src="dev_lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script src="dev_lib/ng-grid/ng-grid-2.0.7.debug.js"></script>
+  <!-- Replace this with production ui-grid when export functions are released -->
+	<!-- Using local "hacked" version of ui-grid.js until Chrome issue is addressed -->
+	<script src="js/vendor/angular-ui-grid/ui-grid.js"></script>
+  <!--<script src="dev_lib/angular-ui-grid/ui-grid.js"></script>-->
+  <script src="dev_lib/csv/lib/csv.js"></script>
+  <script src="dev_lib/pdfmake/build/pdfmake.js"></script>
+  <script src="dev_lib/pdfmake/build/vfs_fonts.js"></script>
+  <script src="js/vendor/hashtable.js"></script>
+<!-- These should now be covered by the Angular-strap modules
+	<script src="dev_lib/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js"></script>
+	<script src="dev_lib/bootstrap/dist/js/bootstrap.js"></script>
+-->
+	<!-- -->
+
+	<!-- build:js js/plugins.js -->
+	<script src="js/date.js"></script>
+	<script src="js/mask.js"></script>
+	<!--<script src="js/ui-bootstrap-tpls-0.6.0.js"></script>-->
+	<!-- endbuild -->
+
+	<!-- build:js({.tmp,app}) js/scripts.js -->
+	<script src="js/app.js"></script>
+	<!-- endbuild -->
+
+	<!-- build:js js/modules.js -->
+	<script src="js/controllers.js"></script>
+	<script src="js/directives.js"></script>
+	<script src="js/filters.js"></script>
+	<script src="js/services.js"></script>
+			<!-- Subview Controls -->
+	<script src="js/SubCtrls/BCGridCtrl.js"></script>
+	<script src="js/SubCtrls/BillingGridCtrl.js"></script>
+	<script src="js/SubCtrls/DoctorListCtrl.js"></script>
+	<script src="js/SubCtrls/DXGridCtrl.js"></script>
+	<script src="js/SubCtrls/HospitalGridCtrl.js"></script>
+	<script src="js/SubCtrls/HospitalListCtrl.js"></script>
+	<script src="js/SubCtrls/MCGridCtrl.js"></script>
+	<script src="js/SubCtrls/PatientGridCtrl.js"></script>
+	<script src="js/SubCtrls/PatientListCtrl.js"></script>
+	<script src="js/SubCtrls/PCalGridCtrl.js"></script>
+	<script src="js/SubCtrls/quickbillGridCtrl.js"></script>
+	<script src="js/SubCtrls/UserSubCtrl.js"></script>
+	<script src="js/SubCtrls/UserGridCtrl.js"></script>
+	<script src="js/SubCtrls/VHistoryGridCtrl.js"></script>
+			<!-- View Controls -->
+	<script src="js/ViewCtrls/AddPatientsViewCtrl.js"></script>
+	<script src="js/ViewCtrls/BCViewCtrl.js"></script>
+	<script src="js/ViewCtrls/BillingViewCtrl.js"></script>
+	<script src="js/ViewCtrls/DXViewCtrl.js"></script>
+	<script src="js/ViewCtrls/HomeViewCtrl.js"></script>
+	<script src="js/ViewCtrls/HospitalsViewCtrl.js"></script>
+	<script src="js/ViewCtrls/LogoutViewCtrl.js"></script>
+	<script src="js/ViewCtrls/MCViewCtrl.js"></script>
+	<script src="js/ViewCtrls/PatientsViewCtrl.js"></script>
+	<script src="js/ViewCtrls/PCalViewCtrl.js"></script>
+	<script src="js/ViewCtrls/quickbillViewCtrl.js"></script>
+	<script src="js/ViewCtrls/UsersViewCtrl.js"></script>
+	<script src="js/ViewCtrls/VisitsViewCtrl.js"></script>
+	<!-- endbuild -->
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<div class="sr-allcontent">
+	<nav>
+		<ul>
+			<li>
+				<a href="" ng-click="goToHome()"><i class="icon-home"></i> HOME</a>
+			</li>
+			<li>
+				<a href="" ng-click="goToPatients()"><i class="icon-group"></i> PATIENTS</a>
+			</li>
+			<li>
+				<a href="" ng-click="goToVisits()"><i class="icon-stethoscope"></i> VISITS</a>
+			</li>
+			<li class="selected">
+				<a href=""><i class="icon-dollar"></i> QUICK BILL</a>
+			</li>
+			<li>
+				<div id="logout">
+					<a href="" ng-click="logout()"><i class="icon-signout"></i> LOGOUT</a>
+				</div>
+			</li>
+		</ul>
+	</nav>
+	<div id="PageContainer">
+		<div id="InnerBanner" ng-controller="UserSubCtrl">
+			<div id="DoctorName">
+				<i class="icon-user-md"></i> {{fullName}}
+			</div>
+			<div id="PracticeName">
+				<i class="icon-medkit"></i> {{practice.name}}
+			</div>
+		</div>
+		<!-- End of InnerBanner -->
+		<div id="SelectDateHospitalBanner">
+			<div class="col-md-12">
+				<form class="form-inline">
+					<div class="form-group col-md-3">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="icon-calendar"></i></span>
+							<input class="form-control input-sm" ui-date id="RoundsDate"
+							       ng-model="roundsDate"/>
+						</div>
+					</div>
+					<div class="form-group col-md-3">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="icon-hospital"></i></span>
+							<select class="form-control input-sm" name="Hospital"
+							        ng-controller="HospitalListCtrl" ng-model="hospID"
+							        ng-options="h._id as h.name for h in hospitals">
+							</select>
+						</div>
+					</div>
+          <div class="col-md-2 col-md-offset-2">
+            <i class="icon-ok input-sm sr-Icon-Right" ng-show="showSaved"> Saved</i>
+            <i class="icon-spinner input-sm sr-Icon-Right" ng-show="showSaving"> Saving...</i>
+          </div>
+					<div id="PrintPatList">
+						<button ng-click="SaveChanges()"
+                    class="btn btn-primary btn-xs fullwidth sr-btn-margin"
+              data-ng-disabled="showSaving">
+							<i class="icon-save"></i>
+							Save Updates
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- End of SelectDateHospitalBanner -->
+		<div ng-controller="QuickbillGridCtrl">
+			<div id="QuickbillGrid" class="qbGridStyle" ui-grid="gridOptions"></div>
+		</div>
+	</div>
+	<!-- End of PageContainer -->
+</div>
+<!-- AllContent -->
